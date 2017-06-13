@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<script>
+		var exports = {};
+	</script>
+	<script src="../index.js"></script>
+</head>
+<body>
+
+<form>
+	User ID: <input id="userId" value="harry"><br>
+	Session ID: <input id="sessionId" value="123456"><br>
+	<br>
+	Event name: <input id="eventName" value="myEvent"><br>
+	Event params:
+	<textarea id="eventParams">{}</textarea><br>
+	<br>
+	<input type="submit" value="Log">
+</form>
+
+<script>
+	var deltadna = exports;
+
+	deltadna.setCollectUrl('http://collect4792jmprb.deltadna.net/collect/api/');
+	deltadna.setEnvironmentKey('22079697190426055695055037414340');
+	deltadna.setInterval(500); // send event batches every N msec (optional)
+
+	function log() {
+		var userId = document.getElementById('userId').value.trim();
+		var sessionId = document.getElementById('sessionId').value.trim();
+		var eventName = document.getElementById('eventName').value.trim();
+		var eventParams = document.getElementById('eventParams').value.trim();
+
+		deltadna.setUserId(userId);
+		deltadna.setSessionId(userId);
+		deltadna.logEvent(eventName, JSON.parse(eventParams));
+	}
+
+	document.getElementsByTagName('form')[0].onsubmit = function (e) {
+		e.preventDefault();
+
+		log();
+	};
+</script>
+
+</body>
+</html>

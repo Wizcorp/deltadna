@@ -1,0 +1,27 @@
+{
+  "name": "deltadna",
+  "version": "0.1.1",
+  "description": "DeltaDNA event logging for the web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "deltadna",
+    "delta",
+    "dna"
+  ],
+  "author": "Ron Korving <rkorving@wizcorp.jp>",
+  "license": "MIT",
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wizcorp/deltadna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wizcorp/deltadna/issues"
+  },
+  "homepage": "https://github.com/Wizcorp/deltadna#readme"
+}
